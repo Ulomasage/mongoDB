@@ -61,18 +61,19 @@ app.get("/getones/:email",async(req,res)=>{
 })
 
 //udate 
-app.put("/update/:id",async(req,res)=>{
-    try {
-        let id=req.params.id
-        let update=await mymodel.findByIdAndUpdate(id,req.body,{new:true})
-        res.status(200).json({message:`user successfully updated`,update})
-    } catch (error) {
-        res.status(500).json(error.message)  
-    }
-})
+// app.put("/update/:id",async(req,res)=>{
+//     try {
+//         let id=req.params.id
+//         let update=await mymodel.findByIdAndUpdate(id,req.body,{new:true})
+//         res.status(200).json({message:`user successfully updated`,update})
+//     } catch (error) {
+//         res.status(500).json(error.message)  
+//     }
+// })
 
 //delete
 app.delete("/delete/:id",async(req,res)=>{
+    
     try {
         let id=req.params.id
         let deleteOne=await mymodel.findByIdAndDelete(id,req.body)
